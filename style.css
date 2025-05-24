@@ -789,3 +789,15 @@
       font-size: 2rem;
     }
   }
+
+  video.responsive-video {
+    width: 650px;
+    height: 500px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 600px) {
+    video.responsive-video {
+      width: 450px;
+    }
+  }

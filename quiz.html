@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GED Practice Exam</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #2ea56a;
+      padding: 16px;
+      text-align: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    main {
+      padding: 24px;
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    .subject-select, .question-block, .result-section, .review-section {
+      margin-bottom: 20px;
+    }
+    .subject-buttons button {
+      margin: 5px;
+    }
+    .question {
+      font-weight: 600;
+    }
+    .options label {
+      display: block;
+      margin: 8px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .options input[type="radio"] {
+      display: none;
+    }
+    .options input[type="radio"]:checked + label {
+      background-color: #d1f5e0;
+      border-color: #2ea56a;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #2ea56a;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover {
+      background-color: #24975a;
+    }
+    .hidden {
+      display: none;
+    }
+    .timer {
+      font-size: 1rem;
+      color: #555;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    .back-button {
+      margin-top: 20px;
+    }
+    .home-button {
+      margin-top: 10px;
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>GED Practice Exam</header>
+  <main>
+    <section class="subject-select">
+      <p>Choose a Subject:</p>
+      <div class="subject-buttons">
+        <button onclick="selectSubject('math')">Math</button>
+        <button onclick="selectSubject('english')">English</button>
+        <button onclick="selectSubject('social')">Social Studies</button>
+      </div>
+      <button class="home-button" onclick="goHome()">Back to Home</button>
+    </section>
+
+    <section class="question-block hidden">
+      <div class="timer" id="timer">Time Left: 05:00</div>
+      <div class="question-container"></div>
+      <div class="navigation">
+        <button onclick="prevQuestion()">Previous</button>
+        <button onclick="nextQuestion()">Next</button>
+        <button onclick="showReview()">Review</button>
+        <button class="back-button" onclick="confirmGoBack()">Back to Subjects</button>
+      </div>
+    </section>
+
+    <section class="review-section hidden">
+      <h2>Review Your Answers</h2>
+      <div id="review-list"></div>
+      <button onclick="submitQuiz()">Submit Quiz</button>
+      <button class="back-button" onclick="confirmGoBack()">Back to Subjects</button>
+    </section>
+
+    <section class="result-section hidden">
+      <h2>Results</h2>
+      <p id="result-text"></p>
+      <button class="back-button" onclick="confirmGoBack()">Back to Subjects</button>
+      <button class="home-button" onclick="goHome()">Back to Home</button>
+    </section>
+  </main>
+
+  <script>
+    const quizData = {
+      math: [
+        { question: "What is 5 + 7?", options: ["10", "11", "12", "13"], answer: 2 },
+        { question: "Solve: 3 × 4", options: ["6", "9", "12", "15"], answer: 2 }
+      ],
+      english: [
+        { question: "Which word is a noun?", options: ["Run", "Happy", "Book", "Quickly"], answer: 2 },
+        { question: "What is the synonym of 'big'?", options: ["Tiny", "Huge", "Short", "Fast"], answer: 1 }
+      ],
+      social: [
+        { question: "Who was the first President of the USA?", options: ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"], answer: 1 },
+        { question: "What year did WW2 end?", options: ["1944", "1945", "1946", "1947"], answer: 1 }
+      ]
+    };
+
+    let currentSubject = 'math';
+    let currentQuestion = 0;
+    let userAnswers = [];
+    let questions = [];
+    let timer;
+    let timeLeft = 300;
+
+    function selectSubject(subject) {
+      currentSubject = subject;
+      questions = quizData[currentSubject];
+      currentQuestion = 0;
+      userAnswers = new Array(questions.length).fill(null);
+      document.querySelector('.subject-select').classList.add('hidden');
+      document.querySelector('.question-block').classList.remove('hidden');
+      document.querySelector('.review-section').classList.add('hidden');
+      document.querySelector('.result-section').classList.add('hidden');
+      startTimer();
+      renderQuestion();
+    }
+
+    function startTimer() {
+      clearInterval(timer);
+      timeLeft = 300;
+      timer = setInterval(() => {
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          submitQuiz();
+        }
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        document.getElementById('timer').innerText = `Time Left: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        timeLeft--;
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const container = document.querySelector('.question-container');
+      const q = questions[currentQuestion];
+      let html = `<p class="question">Q${currentQuestion + 1}: ${q.question}</p><div class="options">`;
+      q.options.forEach((opt, index) => {
+        const isChecked = userAnswers[currentQuestion] === index ? 'checked' : '';
+        html += `
+          <input type="radio" name="option" id="opt${index}" value="${index}" ${isChecked} onchange="markAnswer(${index})">
+          <label for="opt${index}" class="${isChecked ? 'selected' : ''}">${opt}</label>
+        `;
+      });
+      html += '</div>';
+      container.innerHTML = html;
+    }
+
+    function markAnswer(index) {
+      userAnswers[currentQuestion] = index;
+      renderQuestion();
+    }
+
+    function nextQuestion() {
+      if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        renderQuestion();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        renderQuestion();
+      }
+    }
+
+    function showReview() {
+      document.querySelector('.question-block').classList.add('hidden');
+      document.querySelector('.review-section').classList.remove('hidden');
+      const reviewList = document.getElementById('review-list');
+      reviewList.innerHTML = '';
+      questions.forEach((q, i) => {
+        const answer = userAnswers[i] !== null ? q.options[userAnswers[i]] : 'Not answered';
+        const div = document.createElement('div');
+        div.innerHTML = `<strong>Q${i+1}</strong>: ${q.question}<br><em>Your answer:</em> ${answer}`;
+        reviewList.appendChild(div);
+      });
+    }
+
+    function submitQuiz() {
+      if (!confirm('Are you sure you want to submit the quiz?')) return;
+      clearInterval(timer);
+      let score = 0;
+      userAnswers.forEach((ans, i) => {
+        if (ans === questions[i].answer) score++;
+      });
+      document.querySelector('.question-block').classList.add('hidden');
+      document.querySelector('.review-section').classList.add('hidden');
+      document.querySelector('.result-section').classList.remove('hidden');
+      document.getElementById('result-text').innerText = `You scored ${score} out of ${questions.length}`;
+    }
+
+    function confirmGoBack() {
+      if (confirm('Are you sure you want to go back? Your current progress will be lost.')) {
+        goBackToSubjects();
+      }
+    }
+
+    function goBackToSubjects() {
+      clearInterval(timer);
+      document.querySelector('.subject-select').classList.remove('hidden');
+      document.querySelector('.question-block').classList.add('hidden');
+      document.querySelector('.review-section').classList.add('hidden');
+      document.querySelector('.result-section').classList.add('hidden');
+    }
+
+    function goHome() {
+      if (confirm('Return to the home page? Any progress will be lost.')) {
+        window.location.href = 'index.html';
+      }
+    }
+  </script>
+</body>
+</html>

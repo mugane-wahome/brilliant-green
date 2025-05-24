@@ -6,201 +6,461 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="https://images.pexels.com/photos/35196/water-plant-green-fine-layers.jpg" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
-    <title>Green Nature</title>
-    <!-- font awesome script -->
-    <script
-      defer
-      src="https://kit.fontawesome.com/9f47c55281.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- google fonts -->
+    <title>Brilliant Tutors</title>
+    <script defer src="https://kit.fontawesome.com/9f47c55281.js" crossorigin="anonymous"></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
     </style>
   </head>
   <body class="relative">
-    <!-- header section -->
-    <header>
-      <div class="container header-section">
+    <header style="background-color: #ffffff; border-bottom: 1px solid #ccc; padding: 16px 32px; position: sticky; top: 0; z-index: 1000;">
+      <div class="container header-section" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto;">
+        
         <div aria-details="logo" class="logo">
-          <a href="#">GreeN</a>
-        </div>
-        <div class="menu" id="menu">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-        </div>
-        <nav>
-          <!-- nav-Links -->
-          <ul class="nav-links">
-            <li class="active">
-              <a href="#home">Home</a>
-            </li>
-            <li style="--d: 0.1s">
-              <a href="#">Services</a>
-            </li>
-            <li style="--d: 0.2s">
-              <a href="#features">Features</a>
-            </li>
-            <li style="--d: 0.3s">
-              <a href="#about">About</a>
-            </li>
-          </ul>
-          <!-- Buttons -->
-          <div class="btns" style="--d: 0.4s">
-            <a href="#" class="signin-btn button">Sign In</a>
-            <a href="#" class="button sign-up">Sign Up</a>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- Hero section -->
-    <section id="home">
-      <div class="container hero-section">
-        <div class="hero-contents">
-          <h1 class="hero-text">Welcome to Green Nature.</h1>
-          <p class="hero-subText">Where beauty meets existence.</p>
-          <a href="#features" class="cta button">
-            Explore Now
-            <i class="fa-solid fa-arrow-right"></i>
+          <a href="#" style="font-size: 1.8rem; font-weight: bold; background: linear-gradient(to right, #00c853, #1b5e20); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; transition: color 0.3s ease;">
+            Brilliant Tutors
           </a>
         </div>
-        <article class="hero-image-container">
-          <img
-            src="https://images.pexels.com/photos/725807/pexels-photo-725807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="green plants"
-            loading="lazy"
-            width="100"
-            height="100"
-          />
+        
+    
+        <div class="menu" id="menu">
+          <span class="line" style="width: 25px; height: 3px; background-color: #2ea56a; margin: 4px 0; display: block; border-radius: 2px;"></span>
+          <span class="line" style="width: 25px; height: 3px; background-color: #2ea56a; margin: 4px 0; display: block; border-radius: 2px;"></span>
+          <span class="line" style="width: 25px; height: 3px; background-color: #2ea56a; margin: 4px 0; display: block; border-radius: 2px;"></span>
+        </div>
+    
+        <nav style="display: flex; align-items: center; gap: 16px;">
+          <ul class="nav-links" style="display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; align-items: center;">
+            <li class="active">
+              <a href="#home" style="padding: 8px 16px; border-radius: 20px; font-weight: 500; text-decoration: none; background-color: #3bd688; color: white;">Home</a>
+            </li>
+            <li  style="--d: 0.1s">
+              <a href="#" style="padding: 8px 16px; border-radius: 20px; font-weight: 500; text-decoration: none; color: #0b0f0d; ">Services</a>
+            </li>
+            <li style="--d: 0.2s">
+              <a href="#features" style="padding: 8px 16px; border-radius: 20px; font-weight: 500; text-decoration: none; color: #0b0f0d;">Subjects</a>
+            </li>
+            <li style="--d: 0.3s">
+              <a href="#about" style="padding: 8px 16px; border-radius: 20px; font-weight: 500; text-decoration: none; color: #0b0f0d;">About</a>
+            </li>
+            <li style="--d: 0.3s">
+              <a href="quiz.html" style="padding: 8px 16px; border-radius: 20px; font-weight: 500; text-decoration: none; color: #0b0f0d;">Practice Quiz</a>
+            </li>
+            <li style="--d: 0.3s">
+              <a href="store.html" style="padding: 8px 16px; border-radius: 20px; font-weight: 500; text-decoration: none; color: #0b0f0d;">Exam store</a>
+            </li>
+          </ul>
+    
+          <div class="btns" style="display: flex; gap: 8px; margin-left: 16px; --d: 0.4s;">
+            <a href="#" class="signin-btn button" style="padding: 8px 20px; border-radius: 30px; border: 2px solid #3bd688; color: #2ea56a; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Sign In</a>
+            <a href="#" class="button sign-up" style="padding: 8px 20px; border-radius: 30px; background: linear-gradient(to right, #3bd688, #2ea56a); color: white; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Sign Up</a>
+          </div>
+        </nav>
+        
+      </div>
+    </header>
+    
+    <section id="home" style="padding: 4rem 0; background: linear-gradient(to right, #e8f5e9, #ffffff);">
+      <div class="container hero-section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;">
+        
+        <div class="hero-contents" style="flex: 1 1 500px; text-align: left;">
+          <h1 class="hero-text" style="font-size: 2.8rem; font-weight: 800; color: #1b5e20; margin-bottom: 1rem;">Welcome to Brilliant Tutors</h1>
+          
+          <p class="hero-subText" style="font-size: 1.2rem; color: #388e3c; margin-bottom: 2rem;">Your success starts with expert guidance.</p>
+          
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+            <a href="#features" class="cta button" style="padding: 0.8rem 1.5rem; background: #43a047; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; transition: background 0.3s;">
+              Get Started <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i>
+            </a>
+            <a href="#features" class="cta button" style="padding: 0.8rem 1.5rem; background: #2e7d32; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; transition: background 0.3s;">
+              Get Started <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i>
+            </a>
+            <a href="#features" class="cta button" style="padding: 0.8rem 1.5rem; background: #388e3c; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; transition: background 0.3s;">
+              Get Started <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i>
+            </a>
+            <a href="#features" class="cta button" style="padding: 0.8rem 1.5rem; background: #1b5e20; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; transition: background 0.3s;">
+              Get Started <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i>
+            </a>
+          </div>
+        </div>
+    
+        <article class="hero-image-container" style="flex: 1 1 500px; text-align: center;">
+          <video controls poster="img/thumbnail.jpg" class="responsive-video" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 100, 0, 0.2);">
+            <source src="img/img%202.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </article>
-        <div class="social-links">
-          <a href="https://github.com/nath-Nipan-2022"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a href="https://www.linkedin.com/in/nipan-debnath-742025248"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a href="https://twitter.com/nipandebnth?s=09"
-            ><i class="fa-brands fa-twitter"></i
-          ></a>
-        </div>
+    
       </div>
     </section>
-    <!-- Features section -->
-    <section id="features" class="relative">
-      <div class="strip-line horizontal"></div>
-      <div class="strip-line horizontal"></div>
-      <div class="strip-line horizontal"></div>
+    
+    <section id="features" style="padding: 3rem 1rem; background: #f0fbf7; font-family: Arial, sans-serif;">
 
-      <div class="container features-section relative">
-        <h2 class="features_heading w-full">Features of Nature 🌴</h2>
-
-        <div class="features flex-group relative">
-          <div class="strip-line vertical"></div>
-
-          <!-- left feature -->
-          <div class="feature feature-one flex-group">
-            <div class="circle absolute"></div>
-            <div class="image-section">
-              <img
-                src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                alt="Flowers"
-                width="100"
-                height="100"
-                loading="lazy"
-              />
-            </div>
-            <article class="text-section">
-              <h3 class="title">
-                <span>Sunflower Spectacle</span>
-              </h3>
-              <p class="description">
-                Among the all kinds of flowers, Sunflower is one of the bright &
-                well structured flowers. It always attracts us! &#128512;
-              </p>
-              <a href="#" class="button more-btn">Know More</a>
-            </article>
-          </div>
-          <!-- right feature -->
-          <div class="feature feature-two flex-group">
-            <div class="circle absolute"></div>
-            <article class="text-section">
-              <h3 class="title">
-                <span>Snow Falls Wonderland</span>
-              </h3>
-              <p class="description">
-                The smooth surface and the beauty of snow falls really makes to
-                go and play with the snows! &#128514;
-              </p>
-              <a href="#" class="button more-btn">Know More</a>
-            </article>
-            <div class="image-section">
-              <img
-                src="https://images.unsplash.com/photo-1518984211165-a6c9abed630f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=867&q=80"
-                alt="Snow"
-                width="100"
-                height="100"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <!-- left feature -->
-          <div class="feature feature-three flex-group">
-            <!-- small circle-->
-            <div class="circle absolute"></div>
-            <div class="image-section">
-              <img
-                src="https://images.unsplash.com/photo-1579304113495-203391042ddc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=726&q=80"
-                alt="Natural Umbrella"
-                width="100"
-                height="100"
-                loading="lazy"
-              />
-            </div>
-            <article class="text-section">
-              <h3 class="title">
-                <span>Toadstools</span>
-              </h3>
-              <p class="description">
-                From vibrant caps to hidden mysteries, the Toadstools invite you to explore the mystical side of the plant kingdom! &#128513;
-              </p>
-              <a href="#" class="button more-btn">Know More</a>
-            </article>
-          </div>
+      <h2 style="
+        text-align: center; 
+        color: #1B5E20;
+        font-size: 2.5rem; 
+        margin-bottom: 2rem; 
+        font-weight: 700; 
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      ">
+        Subjects and Exam Prep 📚
+      </h2>
+    
+      <div style="
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 1.5rem; 
+        max-width: 1200px; 
+        margin: 0 auto;
+      ">
+    
+        <!-- Feature 1: Math Tutoring -->
+        <div style="
+          background: linear-gradient(145deg, #3bd688, #2ca563);
+          color: white; 
+          border-radius: 16px; 
+          width: 280px; 
+          padding: 1.5rem; 
+          box-shadow: 0 8px 15px rgba(59, 214, 136, 0.3); 
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          text-align: center;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        "
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 24px rgba(59, 214, 136, 0.5)';" 
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 15px rgba(59, 214, 136, 0.3)';"
+        >
+          <img src="https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg" alt="Math Tutoring" width="100" height="100" loading="lazy" style="
+            border-radius: 12px; 
+            margin-bottom: 1rem; 
+            object-fit: cover; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s ease;
+          " 
+          onmouseover="this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)';" 
+          onmouseout="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)';"
+          />
+          <h3 style="margin: 0 0 0.5rem 0; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.15);">
+            Math Tutoring
+          </h3>
+          <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Master algebra, calculus, and everything in between with expert math tutors.
+          </p>
+          <a href="#" style="
+            background: #27a35f; 
+            color: white; 
+            padding: 0.5rem 1.2rem; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(39, 163, 95, 0.6);
+          "
+          onmouseover="this.style.background='#1e7545'; this.style.boxShadow='0 6px 15px rgba(30, 117, 69, 0.8)';" 
+          onmouseout="this.style.background='#27a35f'; this.style.boxShadow='0 4px 10px rgba(39, 163, 95, 0.6)';"
+          >
+            Know More
+          </a>
         </div>
+    
+        <!-- Feature 2: Science Support -->
+        <div style="
+          background: linear-gradient(145deg, #2ea56a, #238454);
+          color: white; 
+          border-radius: 16px; 
+          width: 280px; 
+          padding: 1.5rem; 
+          box-shadow: 0 8px 15px rgba(46, 165, 106, 0.3); 
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          text-align: center;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        "
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 24px rgba(46, 165, 106, 0.5)';" 
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 15px rgba(46, 165, 106, 0.3)';"
+        >
+          <img src="https://images.pexels.com/photos/4145355/pexels-photo-4145355.jpeg" alt="Science" width="100" height="100" loading="lazy" style="
+            border-radius: 12px; 
+            margin-bottom: 1rem; 
+            object-fit: cover; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s ease;
+          "
+          onmouseover="this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)';" 
+          onmouseout="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)';"
+          />
+          <h3 style="margin: 0 0 0.5rem 0; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.15);">
+            Science Support
+          </h3>
+          <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Biology, Chemistry, or Physics — our science tutoring makes tough concepts clear.
+          </p>
+          <a href="#" style="
+            background: #1e7545; 
+            color: white; 
+            padding: 0.5rem 1.2rem; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(30, 117, 69, 0.6);
+          "
+          onmouseover="this.style.background='#14542d'; this.style.boxShadow='0 6px 15px rgba(20, 84, 45, 0.8)';" 
+          onmouseout="this.style.background='#1e7545'; this.style.boxShadow='0 4px 10px rgba(30, 117, 69, 0.6)';"
+          >
+            Know More
+          </a>
+        </div>
+    
+        <!-- Feature 3: English & Writing -->
+        <div style="
+          background: linear-gradient(145deg, #3bd688, #2ca563);
+          color: white; 
+          border-radius: 16px; 
+          width: 280px; 
+          padding: 1.5rem; 
+          box-shadow: 0 8px 15px rgba(59, 214, 136, 0.3); 
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          text-align: center;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        " 
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 24px rgba(59, 214, 136, 0.5)';" 
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 15px rgba(59, 214, 136, 0.3)';"
+        >
+          <img src="https://images.pexels.com/photos/4145120/pexels-photo-4145120.jpeg" alt="English" width="100" height="100" loading="lazy" style="
+            border-radius: 12px; 
+            margin-bottom: 1rem; 
+            object-fit: cover; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s ease;
+          " 
+          onmouseover="this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)';" 
+          onmouseout="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)';"
+          />
+          <h3 style="margin: 0 0 0.5rem 0; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.15);">
+            English & Writing
+          </h3>
+          <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            From grammar to essay writing, we help students build strong communication skills.
+          </p>
+          <a href="#" style="
+            background: #27a35f; 
+            color: white; 
+            padding: 0.5rem 1.2rem; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(39, 163, 95, 0.6);
+          "
+          onmouseover="this.style.background='#1e7545'; this.style.boxShadow='0 6px 15px rgba(30, 117, 69, 0.8)';" 
+          onmouseout="this.style.background='#27a35f'; this.style.boxShadow='0 4px 10px rgba(39, 163, 95, 0.6)';"
+          >
+            Know More
+          </a>
+        </div>
+    
+        <!-- Feature 4: GED Exam Prep -->
+        <div style="
+          background: linear-gradient(145deg, #2ea56a, #238454);
+          color: white; 
+          border-radius: 16px; 
+          width: 280px; 
+          padding: 1.5rem; 
+          box-shadow: 0 8px 15px rgba(46, 165, 106, 0.3); 
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          text-align: center;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        "
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 24px rgba(46, 165, 106, 0.5)';" 
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 15px rgba(46, 165, 106, 0.3)';"
+        >
+          <img src="https://images.pexels.com/photos/4145001/pexels-photo-4145001.jpeg" alt="GED Exam Prep" width="100" height="100" loading="lazy" style="
+            border-radius: 12px; 
+            margin-bottom: 1rem; 
+            object-fit: cover; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s ease;
+          "
+          onmouseover="this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)';" 
+          onmouseout="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)';"
+          />
+          <h3 style="margin: 0 0 0.5rem 0; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.15);">
+            GED Exam Prep
+          </h3>
+          <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Complete and confident GED preparation with our targeted study materials and tutors.
+          </p>
+          <a href="#" style="
+            background: #1e7545; 
+            color: white; 
+            padding: 0.5rem 1.2rem; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(30, 117, 69, 0.6);
+          "
+          onmouseover="this.style.background='#14542d'; this.style.boxShadow='0 6px 15px rgba(20, 84, 45, 0.8)';" 
+          onmouseout="this.style.background='#1e7545'; this.style.boxShadow='0 4px 10px rgba(30, 117, 69, 0.6)';"
+          >
+            Know More
+          </a>
+        </div>
+    
+        <!-- Feature 5: TEAS & ATI -->
+        <div style="
+          background: linear-gradient(145deg, #3bd688, #2ca563);
+          color: white; 
+          border-radius: 16px; 
+          width: 280px; 
+          padding: 1.5rem; 
+          box-shadow: 0 8px 15px rgba(59, 214, 136, 0.3); 
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          text-align: center;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        " 
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 24px rgba(59, 214, 136, 0.5)';" 
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 15px rgba(59, 214, 136, 0.3)';"
+        >
+          <img src="https://images.pexels.com/photos/4145038/pexels-photo-4145038.jpeg" alt="TEAS and ATI Prep" width="100" height="100" loading="lazy" style="
+            border-radius: 12px; 
+            margin-bottom: 1rem; 
+            object-fit: cover; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s ease;
+          " 
+          onmouseover="this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)';" 
+          onmouseout="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)';"
+          />
+          <h3 style="margin: 0 0 0.5rem 0; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.15);">
+            TEAS & ATI Prep
+          </h3>
+          <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Ace your nursing entrance exams with comprehensive TEAS and ATI preparation.
+          </p>
+          <a href="#" style="
+            background: #27a35f; 
+            color: white; 
+            padding: 0.5rem 1.2rem; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(39, 163, 95, 0.6);
+          "
+          onmouseover="this.style.background='#1e7545'; this.style.boxShadow='0 6px 15px rgba(30, 117, 69, 0.8)';" 
+          onmouseout="this.style.background='#27a35f'; this.style.boxShadow='0 4px 10px rgba(39, 163, 95, 0.6)';"
+          >
+            Know More
+          </a>
+        </div>
+    
+        <!-- Feature 6: Career Guidance -->
+        <div style="
+          background: linear-gradient(145deg, #2ea56a, #238454);
+          color: white; 
+          border-radius: 16px; 
+          width: 280px; 
+          padding: 1.5rem; 
+          box-shadow: 0 8px 15px rgba(46, 165, 106, 0.3); 
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          text-align: center;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        "
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 24px rgba(46, 165, 106, 0.5)';" 
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 15px rgba(46, 165, 106, 0.3)';"
+        >
+          <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" alt="Career Guidance" width="100" height="100" loading="lazy" style="
+            border-radius: 12px; 
+            margin-bottom: 1rem; 
+            object-fit: cover; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: box-shadow 0.3s ease;
+          "
+          onmouseover="this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)';" 
+          onmouseout="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.15)';"
+          />
+          <h3 style="margin: 0 0 0.5rem 0; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.15);">
+            Career Guidance
+          </h3>
+          <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+            Personalized advice to help you choose the right path after your exam success.
+          </p>
+          <a href="#" style="
+            background: #1e7545; 
+            color: white; 
+            padding: 0.5rem 1.2rem; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(30, 117, 69, 0.6);
+          "
+          onmouseover="this.style.background='#14542d'; this.style.boxShadow='0 6px 15px rgba(20, 84, 45, 0.8)';" 
+          onmouseout="this.style.background='#1e7545'; this.style.boxShadow='0 4px 10px rgba(30, 117, 69, 0.6)';"
+          >
+            Know More
+          </a>
+        </div>
+    
       </div>
     </section>
-
-    <section id="about">
-      <div class="container about-section">
-        <h2>Who We Are</h2>
-        <p>
-          Green Nature is a collective of nature enthusiasts, environmentalists,
-          and creatives who share a common passion for showcasing the splendor
-          of our planet. Whether you're a seasoned nature lover or just starting
-          to appreciate the beauty around you, Green Nature welcomes you with
-          open arms.
+    
+    
+    
+    <section id="about" style="background: #f4fff6; padding: 60px 20px; font-family: 'Raleway', sans-serif;">
+      <div class="container about-section" style="max-width: 1000px; margin: auto; text-align: center;">
+        <h2 style="font-size: 2.5rem; color: #007b33; margin-bottom: 20px;">Who We Are</h2>
+        <p style="font-size: 1.1rem; color: #333; max-width: 800px; margin: auto; line-height: 1.6;">
+          <strong>Brilliant Tutors</strong> is a team of passionate educators dedicated to helping students succeed academically.
+          From subject tutoring to standardized test preparation, we provide <strong>personalized support</strong> to learners of all levels.
         </p>
       </div>
     </section>
-    <footer>
-      <div class="container footer-section">
-        <ul class="footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="https://github.com/nath-Nipan-2022">Contact Us</a></li>
-        </ul>
-        <div class="footer-logo">
-          <span>GreeN</span>
+    
+    <footer style="background: linear-gradient(to right, #3bd688, #2ea56a); padding: 30px 20px; color: white; font-family: 'Raleway', sans-serif;">
+      <div class="container footer-section" style="max-width: 1000px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        
+        <div class="footer-logo" style="font-size: 1.8rem; font-weight: bold;">
+          <span style="background: white; color: #2ea56a; padding: 8px 16px; border-radius: 12px;">Brilliant  Tutors</span> 
         </div>
+    
+        <!-- Optional Footer Links -->
+        <ul class="footer-links" style="list-style: none; display: flex; gap: 20px; flex-wrap: wrap; padding: 0; margin: 15px 0 0;">
+          <li><a href="#home" style="color: white; text-decoration: none; font-weight: 500;">Home</a></li>
+          <li><a href="#features" style="color: white; text-decoration: none; font-weight: 500;">Subjects</a></li>
+          <li><a href="#about" style="color: white; text-decoration: none; font-weight: 500;">About</a></li>
+          <li><a href="mailto:info@brillianttutors.com" style="color: white; text-decoration: none; font-weight: 500;">Contact</a></li>
+        </ul>
+    
+      </div>
+    
+      <div style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #d4f5e7;">
+        © 2025 Brilliant Tutors. All rights reserved.
       </div>
     </footer>
-    <!-- main js -->
+    
     <script src="script.js"></script>
     <script>
-      // footer copyright
       let output = `<span class='copy-write'>&copy; ${new Date().getFullYear()}</span>`;
       document.querySelector("footer .container").innerHTML += output;
     </script>
