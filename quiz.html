@@ -1,8 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+
+
+
+
+
+
+  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <!-- SEO Meta Tags -->
+    <title>Brilliant Academic Minds | GED, TEAS & HESI Test Prep</title>
+    <meta name="description" content="Exam assistance including GED, TEAS, HESI, online classes, tutoring, and more. Prepare smarter with Brilliant Academic Minds." />
+    <meta name="keywords" content="GED practice exams, TEAS test prep, HESI study materials, online classes, tutoring, exam assistance, academic support, education" />
+    <meta name="author" content="Brilliant Academic Minds" />
+  
+    <!-- Open Graph Meta Tags (for social sharing, including WhatsApp) -->
+    <meta property="og:title" content="Brilliant Academic Minds | GED, TEAS & HESI Test Prep" />
+    <meta property="og:description" content="Exam assistance including GED, TEAS, HESI, online classes, tutoring, and more. Prepare smarter with Brilliant Academic Minds." />
+    <meta property="og:image" content="https://images.pexels.com/photos/35196/water-plant-green-fine-layers.jpg" />
+    <meta property="og:url" content="https://www.yourdomain.com" />
+    <meta property="og:type" content="website" />
+  
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Brilliant Academic Minds | GED, TEAS & HESI Test Prep" />
+    <meta name="twitter:description" content="Exam assistance including GED, TEAS, HESI, online classes, tutoring, and more. Prepare smarter with Brilliant Academic Minds." />
+    <meta name="twitter:image" content="https://images.pexels.com/photos/35196/water-plant-green-fine-layers.jpg" />
+  
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/img3.jpg" type="image/x-icon">
+  
+    <!-- Stylesheets and Fonts -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
+    </style>
+  
+    <!-- FontAwesome -->
+    <script defer src="https://kit.fontawesome.com/9f47c55281.js" crossorigin="anonymous"></script>
+  
+  
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GED Practice Exam</title>
   <style>
     body {
@@ -13,16 +58,20 @@
       color: #333;
     }
     header {
-      background: #2ea56a;
+      background: #1b5e20;
       padding: 16px;
       text-align: center;
+    }
+    header a {
       color: white;
       font-size: 1.5rem;
       font-weight: bold;
+      text-decoration: none;
     }
     main {
       padding: 24px;
       max-width: 800px;
+      padding-top: 50px;
       margin: auto;
       background: #fff;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -78,23 +127,32 @@
     .back-button {
       margin-top: 20px;
     }
-    .home-button {
-      margin-top: 10px;
-      background-color: #555;
+    .top-home-button {
+      text-align: right;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <header>GED Practice Exam</header>
+  <header>
+    <a href="index.html">GED Practice Exam</a>
+  </header>
+
   <main>
+    <!-- Back to Home Button at the top -->
+    
+
     <section class="subject-select">
       <p>Choose a Subject:</p>
       <div class="subject-buttons">
         <button onclick="selectSubject('math')">Math</button>
         <button onclick="selectSubject('english')">English</button>
         <button onclick="selectSubject('social')">Social Studies</button>
+        <button onclick="selectSubject('science')">Science</button>
       </div>
-      <button class="home-button" onclick="goHome()">Back to Home</button>
+      <div class="top-home-button">
+        <button style="background-color: black;" onclick="goHome()">Back to Home</button>
+      </div>
     </section>
 
     <section class="question-block hidden">
@@ -119,25 +177,42 @@
       <h2>Results</h2>
       <p id="result-text"></p>
       <button class="back-button" onclick="confirmGoBack()">Back to Subjects</button>
-      <button class="home-button" onclick="goHome()">Back to Home</button>
+      <button onclick="goHome()">Back to Home</button>
     </section>
   </main>
 
   <script>
     const quizData = {
-      math: [
-        { question: "What is 5 + 7?", options: ["10", "11", "12", "13"], answer: 2 },
-        { question: "Solve: 3 × 4", options: ["6", "9", "12", "15"], answer: 2 }
-      ],
-      english: [
-        { question: "Which word is a noun?", options: ["Run", "Happy", "Book", "Quickly"], answer: 2 },
-        { question: "What is the synonym of 'big'?", options: ["Tiny", "Huge", "Short", "Fast"], answer: 1 }
-      ],
-      social: [
-        { question: "Who was the first President of the USA?", options: ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"], answer: 1 },
-        { question: "What year did WW2 end?", options: ["1944", "1945", "1946", "1947"], answer: 1 }
-      ]
-    };
+  math: [
+    { question: "What is 5 + 7?", options: ["10", "11", "12", "13"], answer: 2 },
+    { question: "Solve: 3 × 4", options: ["6", "9", "12", "15"], answer: 2 },
+    { question: "What is 15 ÷ 3?", options: ["3", "4", "5", "6"], answer: 2 },
+    { question: "What is the square root of 81?", options: ["7", "8", "9", "10"], answer: 2 },
+    { question: "What is 8 × 6?", options: ["42", "46", "48", "50"], answer: 2 }
+  ],
+  english: [
+    { question: "Which word is a noun?", options: ["Run", "Happy", "Book", "Quickly"], answer: 2 },
+    { question: "What is the synonym of 'big'?", options: ["Tiny", "Huge", "Short", "Fast"], answer: 1 },
+    { question: "Which sentence is grammatically correct?", options: ["He go to school.", "She going home.", "They is late.", "We are ready."], answer: 3 },
+    { question: "Identify the adjective: 'The red car is fast.'", options: ["car", "red", "fast", "is"], answer: 1 },
+    { question: "What is the opposite of 'early'?", options: ["late", "fast", "slow", "quiet"], answer: 0 }
+  ],
+  social: [
+    { question: "Who was the first President of the USA?", options: ["Abraham Lincoln", "George Washington", "Thomas Jefferson", "John Adams"], answer: 1 },
+    { question: "What year did WW2 end?", options: ["1944", "1945", "1946", "1947"], answer: 1 },
+    { question: "Where is the Statue of Liberty?", options: ["Los Angeles", "Chicago", "New York", "Boston"], answer: 2 },
+    { question: "Who wrote the Declaration of Independence?", options: ["George Washington", "Benjamin Franklin", "Thomas Jefferson", "John Adams"], answer: 2 },
+    { question: "What are the three branches of U.S. government?", options: ["Executive, Legislative, Judicial", "Congress, Senate, Court", "Democrat, Republican, Independent", "State, Federal, Local"], answer: 0 }
+  ],
+  science: [
+    { question: "What planet is known as the Red Planet?", options: ["Earth", "Venus", "Mars", "Jupiter"], answer: 2 },
+    { question: "What gas do plants absorb from the atmosphere?", options: ["Oxygen", "Carbon Dioxide", "Hydrogen", "Nitrogen"], answer: 1 },
+    { question: "What is H2O?", options: ["Hydrogen", "Oxygen", "Salt", "Water"], answer: 3 },
+    { question: "Which organ pumps blood in the human body?", options: ["Lungs", "Liver", "Heart", "Brain"], answer: 2 },
+    { question: "What force pulls objects toward the Earth?", options: ["Magnetism", "Friction", "Gravity", "Electricity"], answer: 2 }
+  ]
+};
+
 
     let currentSubject = 'math';
     let currentQuestion = 0;
@@ -222,7 +297,6 @@
     }
 
     function submitQuiz() {
-      if (!confirm('Are you sure you want to submit the quiz?')) return;
       clearInterval(timer);
       let score = 0;
       userAnswers.forEach((ans, i) => {
@@ -249,10 +323,13 @@
     }
 
     function goHome() {
-      if (confirm('Return to the home page? Any progress will be lost.')) {
-        window.location.href = 'index.html';
-      }
+      window.location.href = "index.html"; // Change this to the actual path if needed
     }
   </script>
 </body>
+<a href="https://wa.me/+18437038641?text=Hello%20Tutor,%20I%20would%20need%20help%20with" target="_blank" id="whatsapp-button" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; font-size: 30px; width: 60px; height: 60px; text-align: center; border-radius: 50%; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); z-index: 1000; display: flex; justify-content: center; align-items: center; text-decoration: none; transition: transform 0.3s ease, background-color 0.3s ease;">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 </html>
