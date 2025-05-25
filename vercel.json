@@ -2,3 +2,14 @@
   {
     "cleanUrls": true
   }
+
+  {
+    "redirects": [
+      {
+        "source": "https://brilliantacademicmindsofficial.com/:path*",
+        "destination": "https://www.brilliantacademicmindsofficial.com/:path*",
+        "permanent": true
+      }
+    ]
+  }
+  
