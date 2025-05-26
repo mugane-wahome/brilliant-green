@@ -38,28 +38,35 @@
   
     <!-- FontAwesome -->
     <script defer src="https://kit.fontawesome.com/9f47c55281.js" crossorigin="anonymous"></script>
+    <script>
+      // Redirect mobile users to mobile.html
+      if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        if (!window.location.pathname.endsWith("mobile.html")) {
+          window.location.href = "mobile.html";
+        }
+      }
+    </script>
   </head>
   
   <header style="background-color: #ffffff; border-bottom: 1px solid #ccc; padding: 16px 32px; position: sticky; top: 0; z-index: 1000; width: 100%;">
     <div class="header-section" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 100%; margin: 0 auto;">
       
       <a href="/" 
-   style="
-      font-size: 1.8rem; 
-      font-weight: bold; 
-      background: linear-gradient(to right, #1b5e20, #43a047); 
-      background-clip: text; 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; 
-      text-decoration: none; 
-      transition: opacity 0.3s ease;
-   "
-   title="Brilliant Academic Minds - Home">
-   Brilliant Academic Minds
-</a>
-
+        style="
+          font-size: 1.8rem; 
+          font-weight: bold; 
+          background: linear-gradient(to right, #1b5e20, #43a047); 
+          background-clip: text; 
+          -webkit-background-clip: text; 
+          -webkit-text-fill-color: transparent; 
+          text-decoration: none; 
+          transition: opacity 0.3s ease;
+        "
+        title="Brilliant Academic Minds - Home">
+        Brilliant Academic Minds
+      </a>
   
-      <div class="menu" id="menu">
+      <div class="menu" id="menu" style="cursor: pointer; display: none; flex-direction: column; justify-content: center;">
         <span class="line" style="width: 25px; height: 3px; background-color:#1b5e20; margin: 4px 0; display: block; border-radius: 2px;"></span>
         <span class="line" style="width: 25px; height: 3px; background-color: #1b5e20; margin: 4px 0; display: block; border-radius: 2px;"></span>
         <span class="line" style="width: 25px; height: 3px; background-color: #1b5e20; margin: 4px 0; display: block; border-radius: 2px;"></span>
@@ -72,7 +79,6 @@
           </li>
           <li><a href="#" style="padding: 8px 16px; border-radius: 20px; font-weight: 500; text-decoration: none; color: #0b0f0d;">Services</a></li>
           <li><a href="tutoring.html" style="padding: 8px 16px; border-radius: 20px; font-weight: 500; text-decoration: none; color: #0b0f0d;">Book Exam</a></li>
-
           <li><a href="#features" style="padding: 8px 16px; border-radius: 20px; font-weight: 500; text-decoration: none; color: #0b0f0d;">Subjects</a></li>
           <li><a href="#about" style="padding: 8px 16px; border-radius: 20px; font-weight: 500; text-decoration: none; color: #0b0f0d;">About</a></li>
           <li><a href="quiz.html" style="padding: 8px 16px; border-radius: 20px; font-weight: 500; text-decoration: none; color: #0b0f0d;">Practice Quiz</a></li>
@@ -81,13 +87,55 @@
         </ul>
   
         <div class="btns" style="display: flex; gap: 8px; margin-left: 16px;">
-          <a href="#" class="signin-btn button" style="padding: 8px 20px; border-radius: 30px; border: 2px solid#1b5e20; color:#1b5e20; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Sign In</a>
+          <a href="#" class="signin-btn button" style="padding: 8px 20px; border-radius: 30px; border: 2px solid #1b5e20; color:#1b5e20; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Sign In</a>
           <a href="#" class="button sign-up" style="padding: 8px 20px; border-radius: 30px; background: linear-gradient(to right,#1b5e20, #1b5e20); color: white; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Sign Up</a>
         </div>
       </nav>
       
-      </div>
-   </header>
+    </div>
+  </header>
+  
+  <script>
+    // Simple toggle for mobile menu
+    const menuIcon = document.getElementById('menu');
+    const navLinks = document.querySelector('nav ul.nav-links');
+  
+    menuIcon.addEventListener('click', () => {
+      if(navLinks.style.display === 'flex') {
+        navLinks.style.display = 'none';
+      } else {
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.backgroundColor = '#fff';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '70px';
+        navLinks.style.right = '32px';
+        navLinks.style.padding = '16px';
+        navLinks.style.borderRadius = '8px';
+        navLinks.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+        navLinks.style.zIndex = '1001';
+      }
+    });
+  
+    // Show menu icon on smaller screens
+    function checkWidth() {
+      if(window.innerWidth <= 768) {
+        menuIcon.style.display = 'flex';
+        navLinks.style.display = 'none';
+      } else {
+        menuIcon.style.display = 'none';
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'row';
+        navLinks.style.position = 'static';
+        navLinks.style.backgroundColor = 'transparent';
+        navLinks.style.padding = '0';
+        navLinks.style.boxShadow = 'none';
+      }
+    }
+    window.addEventListener('resize', checkWidth);
+    window.addEventListener('load', checkWidth);
+  </script>
+  
   
     
    <section id="home" style="padding: 2rem 0; background: linear-gradient(to right, #e8f5e9, #ffffff); width: 100%;">
@@ -523,4 +571,7 @@
     color: transparent; /* Required for text clipping */
   }
 </style>
+
+
+
 </html>
