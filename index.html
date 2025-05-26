@@ -43,11 +43,21 @@
   <header style="background-color: #ffffff; border-bottom: 1px solid #ccc; padding: 16px 32px; position: sticky; top: 0; z-index: 1000; width: 100%;">
     <div class="header-section" style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 100%; margin: 0 auto;">
       
-      <div aria-details="logo" class="logo">
-        <a href="#" style="font-size: 1.8rem; font-weight: bold; background: linear-gradient(to right, #1b5e20, #1b5e20); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; transition: color 0.3s ease;">
-          Brilliant Academic Minds
-        </a>
-      </div>
+      <a href="/" 
+   style="
+      font-size: 1.8rem; 
+      font-weight: bold; 
+      background: linear-gradient(to right, #1b5e20, #43a047); 
+      background-clip: text; 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+      text-decoration: none; 
+      transition: opacity 0.3s ease;
+   "
+   title="Brilliant Academic Minds - Home">
+   Brilliant Academic Minds
+</a>
+
   
       <div class="menu" id="menu">
         <span class="line" style="width: 25px; height: 3px; background-color:#1b5e20; margin: 4px 0; display: block; border-radius: 2px;"></span>
@@ -508,7 +518,8 @@
 <style>
   .example {
     -webkit-background-clip: text; /* For WebKit-based browsers */
-    background-clip: text; /* Standard property */
+    -webkit-background-clip: text; /* For WebKit-based browsers */
+    background-clip: text; /* Standard property for compatibility */
     color: transparent; /* Required for text clipping */
   }
 </style>
