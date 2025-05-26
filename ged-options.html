@@ -44,6 +44,27 @@
       padding: 40px 20px;
     }
 
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #1c4532;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 64, 32, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #14532d;
+    }
+
     h1 {
       text-align: center;
       font-size: 2.5rem;
@@ -116,15 +137,19 @@
   </style>
 </head>
 <body>
+
+  <!-- Back Button -->
+  <button onclick="history.back()" class="back-btn">← Back</button>
+
   <h1>Select a GED Subject to Purchase</h1>
 
   <div class="subject-grid">
     <div class="subject">
       <h2>Math</h2>
-      <p>Price: $10</p>
+      <p>Price: $50</p>
       <button 
         onclick="alert('Math added to cart'); window.location.href='https://payhip.com/b/4ZnwB';" 
-        style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;"
+        class="buy-btn"
         aria-label="Buy Math Practice Test"
         title="Buy Math Practice Test">
         Buy
@@ -132,10 +157,10 @@
     </div>
     <div class="subject">
       <h2>Science</h2>
-      <p>Price: $10</p>
+      <p>Price: $50</p>
       <button 
         onclick="alert('Science added to cart'); window.location.href='https://payhip.com/b/QAyD0';" 
-        style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;"
+        class="buy-btn"
         aria-label="Buy Science Practice Test"
         title="Buy Science Practice Test">
         Buy
@@ -143,10 +168,10 @@
     </div>
     <div class="subject">
       <h2>Social Studies</h2>
-      <p>Price: $10</p>
+      <p>Price: $50</p>
       <button 
         onclick="alert('Social Studies added to cart'); window.location.href='https://payhip.com/b/P1jBa';" 
-        style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;"
+        class="buy-btn"
         aria-label="Buy Social Studies Practice Test"
         title="Buy Social Studies Practice Test">
         Buy
@@ -154,15 +179,16 @@
     </div>
     <div class="subject">
       <h2>Language Arts</h2>
-      <p>Price: $10</p>
+      <p>Price: $50</p>
       <button 
         onclick="alert('Language Arts added to cart'); window.location.href='https://payhip.com/b/Uq3h4';" 
-        style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 8px; cursor: pointer;"
+        class="buy-btn"
         aria-label="Buy Language Arts Practice Test"
         title="Buy Language Arts Practice Test">
         Buy
       </button>
     </div>
   </div>
+
 </body>
 </html>

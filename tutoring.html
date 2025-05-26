@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Session</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e9f5ee;
+      margin: 0;
+      padding: 2rem;
+      color: #1c4532;
+    }
+
+    #container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 2rem;
+      color: #14532d;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    #formInstruction {
+      text-align: center;
+      font-size: 1rem;
+      color: #2f5931;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 64, 32, 0.08);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #2e4d38;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #b8d8c2;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      background-color: #f6fff9;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: #14532d;
+      outline: none;
+      background-color: #ffffff;
+    }
+
+    button[type="submit"] {
+      background-color: #1c4532;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #14532d;
+    }
+
+    #backHomeBtn {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background-color: #1c4532;
+      color: white;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 64, 32, 0.3);
+    }
+
+    #backHomeBtn:hover {
+      background-color: #14532d;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="backHomeBtn" type="button">← Back Home</button>
+
+  <div id="container">
+    <h1 id="formTitle">Book a Session</h1>
+    <div id="formInstruction">Please choose the type of session you'd like to book.</div>
+
+    <form id="bookingForm">
+      <label for="bookingType">Booking Type</label>
+      <select id="bookingType" required>
+        <option value="">-- Select Type --</option>
+        <option value="tutoring">Tutoring Session</option>
+        <option value="exam">Exam Booking</option>
+      </select>
+
+      <label for="name">Your Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" required>
+
+      <label for="whatsapp">Your WhatsApp Number</label>
+      <input type="tel" id="whatsapp" placeholder="e.g. +1 555-123-4567" required>
+
+      <div id="subjectGroup">
+        <label for="subject" id="subjectLabel">Subject</label>
+        <select id="subject" required></select>
+      </div>
+
+      <label for="date" id="dateLabel">Preferred Date</label>
+      <input type="date" id="date" required>
+
+      <button type="submit" id="submitBtn">Send via WhatsApp</button>
+    </form>
+  </div>
+
+  <script>
+    const bookingTypeEl = document.getElementById('bookingType');
+    const subjectEl = document.getElementById('subject');
+    const formTitle = document.getElementById('formTitle');
+    const formInstruction = document.getElementById('formInstruction');
+    const subjectLabel = document.getElementById('subjectLabel');
+    const dateLabel = document.getElementById('dateLabel');
+    const submitBtn = document.getElementById('submitBtn');
+
+    const tutoringSubjects = ["GED Math", "GED Science", "GED Social Studies", "NCLEX"];
+    const examSubjects = ["GED Math", "GED Science", "GED Social Studies", "GED RLA", "TEAS", "HESI", "Pharmacology", "Nursing Exams", "NCLEX"];
+
+    bookingTypeEl.addEventListener('change', function () {
+      const type = this.value;
+      let options = [];
+
+      if (type === "tutoring") {
+        options = tutoringSubjects;
+        formTitle.textContent = "Book a Tutoring Session";
+        formInstruction.textContent = "Choose the subject you want tutoring for.";
+        subjectLabel.textContent = "Tutoring Subject";
+        dateLabel.textContent = "Preferred Date for Tutoring";
+        submitBtn.textContent = "Book Tutoring via WhatsApp";
+      } else if (type === "exam") {
+        options = examSubjects;
+        formTitle.textContent = "Book an Exam Session";
+        formInstruction.textContent = "Choose the exam you're registering for.";
+        subjectLabel.textContent = "Exam to Book";
+        dateLabel.textContent = "Exam Date";
+        submitBtn.textContent = "Book Exam via WhatsApp";
+      } else {
+        formTitle.textContent = "Book a Session";
+        formInstruction.textContent = "Please choose the type of session you'd like to book.";
+        subjectLabel.textContent = "Subject / Exam";
+        dateLabel.textContent = "Preferred Date";
+      }
+
+      subjectEl.innerHTML = '<option value="">-- Select --</option>';
+      options.forEach(item => {
+        const opt = document.createElement('option');
+        opt.value = item;
+        opt.textContent = item;
+        subjectEl.appendChild(opt);
+      });
+    });
+
+    document.getElementById('backHomeBtn').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const bookingType = bookingTypeEl.value;
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const userWhatsApp = document.getElementById('whatsapp').value.trim();
+      const subject = subjectEl.value;
+      const date = document.getElementById('date').value;
+
+      if (bookingType && name && email && userWhatsApp && subject && date) {
+        const tutorWhatsApp = '254719472162';
+        let message = '';
+
+        if (bookingType === 'tutoring') {
+          message = `Hello! My name is ${name}. I would like to book a *tutoring session* for "${subject}" on ${date}.`;
+        } else if (bookingType === 'exam') {
+          message = `Hello! My name is ${name}. I have a *${subject}* test on ${date}, and I would like to book for the exam.`;
+        }
+
+        message += `\n\nYou can reach me at:\nEmail: ${email}\nWhatsApp: ${userWhatsApp}`;
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/${tutorWhatsApp}?text=${encodedMessage}`;
+
+        window.open(whatsappURL, '_blank');
+      }
+    });
+  </script>
+</body>
+</html>
